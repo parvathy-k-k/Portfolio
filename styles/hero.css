@@ -1,0 +1,50 @@
+.column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    padding: 48px 0 80px;
+    min-height: calc(100vh - 100px);
+    display: grid;
+    position: relative;
+}
+
+.hero__inner {
+    justify-content: center;
+}
+
+.hero__avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.hero__avatar img {
+    width: 96px;
+    height: 96px;
+    object-fit: contain
+}
+
+.hero__title {
+    font-size: 34px;
+    margin: 6px 0 6px;
+    font-weight: 800
+}
+
+.hero__desc {
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+.hero__cta {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0 8px
+}

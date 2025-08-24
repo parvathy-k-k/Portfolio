@@ -1,0 +1,64 @@
+:root {
+  --bg-color: #FBFCFF;
+  --ink: #0f1222;
+  --nav-color: #4A4949;
+  --border: #e8e8f1;
+  --icon-bg: #D7E9FD;
+
+  --heading-fs: 40px;
+  --menu-fs: 20px;
+  --menu-mobile-fs: 16px;
+  --buttons-fs: 16px;
+  --desc-fs: 18px;
+
+  --bg: #ffffff;
+  --bg-soft: #fafafe;
+  --hero-grad: radial-gradient(1000px 420px at 50% -50%, #efeefe 0%, transparent 70%);
+  --surface: #ffffff;
+  
+  --muted: #5f6280;
+  --primary: #151515;
+  --primary-weak: #efeefe;
+  --chip: #f2f3f7;
+  --accent: #36dc97;
+  --shadow: 0 6px 22px rgba(20, 16, 48, .08);
+
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #151515;
+  --ink: #e8ebff;
+  --nav-color: #4A4949;
+  --border: #232741;
+  --icon-bg: #383838;
+
+  --bg: #0b0e19;
+  --bg-soft: #0f1324;
+  --hero-grad: radial-gradient(1000px 420px at 50% -50%, rgba(108, 99, 255, .15), transparent 70%);
+  --surface: #14182a;
+  
+  --ink: #e8ebff;
+  --muted: #b6b9d4;
+  --primary: #8c86ff;
+  --primary-weak: rgba(140, 134, 255, .15);
+  --chip: #1b2139;
+  --accent: #2bd391;
+  --shadow: 0 8px 28px rgba(2, 6, 20, .45);
+}
+
+
+.heading {
+    font-size: 40px;
+}
+
+.description {
+    font-size: 18px;
+}
+
+.menu {
+    font-size: 20px;
+}
+
+.buttons {
+    font-size: 16px;
+}

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" class="no-js">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,30 +9,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/theme.css" />
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
   <link rel="stylesheet" href="styles.css" />
   <script>
     // apply saved theme before paint to avoid flash
-    (function(){
+    (function () {
       const saved = localStorage.getItem('theme');
-      if(saved){ document.documentElement.dataset.theme = saved; }
+      if (saved) { document.documentElement.dataset.theme = saved; }
       document.documentElement.classList.remove('no-js');
     })();
   </script>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
+<body>
   <!-- Header -->
   <header class="header container">
-    <a class="brand" href="#top" aria-label="Home">
-      <span class="brand__top">PARVATHY</span>
-      <span class="brand__bottom">KRISHNAN</span>
-    </a>
+    <img src="./images/logo.png" alt="PK" class="logo">
 
     <div class="header__actions">
-      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+      <!-- <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
         <span class="icon-sun" aria-hidden="true"></span>
-      </button>
+      </button> -->
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav">
         <span class="nav-toggle__bar"></span><span class="sr-only">Menu</span>
@@ -43,34 +45,57 @@
         <li><a href="#about">About me</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#journey">Journey</a></li>
-        <li><a class="btn btn--ghost" href="#contact">Get in touch</a></li>
+        <li><a href="#contact">Get in touch</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero -->
   <section id="top" class="hero">
-    <div class="container hero__inner">
+    <div class="container hero__inner column-center">
       <div class="hero__avatar">
         <img src="./images/avatar.png" alt="Portrait of Parvathy" />
       </div>
-      <div class="hero__content">
-        <h1 class="hero__title">Hey, I’m Parvathy</h1>
+      <div class="hero__content column-center">
+        <h1 class="hero__title">👋 Hey, I’m Parvathy</h1>
         <p class="hero__desc">
-          I design user interfaces that make technology feel simple and human. I love turning messy problems
-          into clean, intuitive solutions that people actually enjoy using.
+          I design user interfaces that make technology feel simple and human.
+          I get excited about turning messy problems into clean, intuitive solutions.  My goal is always the same:
+          designs that people actually enjoy using
         </p>
         <div class="hero__cta">
-          <a class="btn btn--primary" href="#projects">View projects</a>
-          <a class="btn btn--ghost" href="#about">About me</a>
+          <a class="btn btn--primary" href="#projects">
+            View projects
+            <i class="fa-solid fa-arrow-right arrow"></i>
+          </a>
         </div>
-        <ul class="social">
-          <li><a aria-label="LinkedIn" href="#" class="social__link">in</a></li>
-          <li><a aria-label="Behance" href="#" class="social__link">be</a></li>
-          <li><a aria-label="Dribbble" href="#" class="social__link">db</a></li>
-        </ul>
+
       </div>
     </div>
+
+    <ul class="social">
+      <li>
+        <a aria-label="LinkedIn" href="#" class="social__link">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+      <li>
+        <a aria-label="Behance" href="#" class="social__link">
+          <i class="fab fa-behance"></i>
+        </a>
+      </li>
+      <li>
+        <a aria-label="Dribbble" href="#" class="social__link">
+          <i class="fab fa-dribbble"></i>
+        </a>
+      </li>
+      <li>
+        <a aria-label="Instagram" href="#" class="social__link">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+    </ul>
+
   </section>
 
   <main id="main">
@@ -214,7 +239,7 @@
       <p>Munich, Germany</p>
       <p><a href="mailto:parvathyx.official@gmail.com">parvathyx.official@gmail.com</a></p>
       <p><a href="tel:+4915510851642">+49 15510851642</a></p>
-      <ul class="social social--footer">
+      <ul class="social--footer">
         <li><a aria-label="LinkedIn" href="#" class="social__link">in</a></li>
         <li><a aria-label="Behance" href="#" class="social__link">be</a></li>
         <li><a aria-label="Dribbble" href="#" class="social__link">db</a></li>
@@ -228,4 +253,5 @@
 
   <script src="app.js" defer></script>
 </body>
+
 </html>
