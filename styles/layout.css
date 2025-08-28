@@ -16,6 +16,7 @@ header {
 
     height: 100px;
     padding: 14px 20px;
+    background: var(--bg-color);
 }
 
 .logo {
@@ -29,18 +30,21 @@ header {
     gap: 8px
 }
 
-.nav {
-    display: block;
-}
+
+
 
 .nav__list {
     display: flex;
+    flex-direction: column;
+
     gap: 26px;
     list-style: none;
     margin: 0;
-    padding: 0;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    padding: 12px;
+
+    font-size: 14px;
 }
+
 
 .nav__list a {
     color: var(--nav-color);
@@ -51,7 +55,7 @@ header {
 }
 
 .nav-toggle {
-    display: none;
+    display: block;
     position: relative;
     width: 42px;
     height: 38px;
@@ -85,7 +89,6 @@ header {
 }
 
 .container {
-    max-width: 1120px;
     margin-inline: auto;
     padding: 0 20px
 }
@@ -199,12 +202,102 @@ header {
     box-shadow: 0 0 0 4px currentColor inset
 }
 
+/* Footer */
+
+.footer {
+    background: var(--footer-bg);
+    color: var(--ink-contrast);
+    padding: 25px;
+}
+
+.footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.footer__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__meta li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+
+.footer__meta li i {
+    background-color: var(--ink-contrast);
+    border-radius: 50%;
+}
+
+.social__footer {
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+.footer__meta .social__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.available-now {
+    background-color: var(--available-now);
+    font-size: 14px;
+    padding: 10px;
+    color: var(--ink-contrast);
+    border-radius: 25px;
+}
+
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 8px;
+  vertical-align: middle
+}
+
 @media (min-width: 768px) {
-    .social {
+
+    .nav {
+        display: block;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    .desktop_social_hero {
         position: absolute;
         bottom: 50px;
         left: 10px;
 
         flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav {
+        position: absolute;
+        inset: 64px 16px auto 16px;
+        display: none;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
     }
 }

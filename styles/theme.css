@@ -4,6 +4,9 @@
   --nav-color: #4A4949;
   --border: #e8e8f1;
   --icon-bg: #D7E9FD;
+  --footer-bg: #151515;
+  --ink-contrast: #e8ebff;
+  --available-now: #2C2C2C;
 
   --heading-fs: 40px;
   --menu-fs: 20px;
@@ -31,6 +34,9 @@
   --nav-color: #4A4949;
   --border: #232741;
   --icon-bg: #383838;
+  --footer-bg: #FBFCFF;
+  --ink-contrast: #0f1222;
+  --available-now: #2C2C2C;
 
   --bg: #0b0e19;
   --bg-soft: #0f1324;
@@ -46,19 +52,3 @@
   --shadow: 0 8px 28px rgba(2, 6, 20, .45);
 }
 
-
-.heading {
-    font-size: 40px;
-}
-
-.description {
-    font-size: 18px;
-}
-
-.menu {
-    font-size: 20px;
-}
-
-.buttons {
-    font-size: 16px;
-}

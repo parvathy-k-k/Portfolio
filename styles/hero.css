@@ -48,3 +48,17 @@
     gap: 12px;
     margin: 16px 0 8px
 }
+
+
+@media (max-width: 760px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center
+  }
+
+  .hero__avatar {
+    margin-bottom: 8px
+  }
+
+}

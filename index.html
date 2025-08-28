@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="styles/reset.css" />
   <link rel="stylesheet" href="styles/layout.css" />
   <link rel="stylesheet" href="styles/hero.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
   <script>
     // apply saved theme before paint to avoid flash
     (function () {
@@ -60,7 +60,7 @@
         <h1 class="hero__title">👋 Hey, I’m Parvathy</h1>
         <p class="hero__desc">
           I design user interfaces that make technology feel simple and human.
-          I get excited about turning messy problems into clean, intuitive solutions.  My goal is always the same:
+          I get excited about turning messy problems into clean, intuitive solutions. My goal is always the same:
           designs that people actually enjoy using
         </p>
         <div class="hero__cta">
@@ -73,7 +73,7 @@
       </div>
     </div>
 
-    <ul class="social">
+    <ul class="social desktop_social_hero">
       <li>
         <a aria-label="LinkedIn" href="#" class="social__link">
           <i class="fab fa-linkedin-in"></i>
@@ -141,7 +141,7 @@
 
         <div class="grid">
           <article class="card">
-            <figure class="card__media"><img src="assets/proj-1.jpg" alt="Traceability app mockups"></figure>
+            <figure class="card__media"><img src="images/project1.png" alt="Traceability app mockups"></figure>
             <div class="card__body">
               <h3 class="card__title">Traceability App</h3>
               <a class="card__link" href="#">View case study</a>
@@ -149,7 +149,7 @@
           </article>
 
           <article class="card">
-            <figure class="card__media"><img src="assets/proj-2.jpg" alt="Interios furniture UI"></figure>
+            <figure class="card__media"><img src="images/project2.png" alt="Interios furniture UI"></figure>
             <div class="card__body">
               <h3 class="card__title">Interios</h3>
               <a class="card__link" href="#">View case study</a>
@@ -157,7 +157,7 @@
           </article>
 
           <article class="card">
-            <figure class="card__media"><img src="assets/proj-3.jpg" alt="Expense manager dashboards"></figure>
+            <figure class="card__media"><img src="images/project3.png" alt="Expense manager dashboards"></figure>
             <div class="card__body">
               <h3 class="card__title">Expense Manager</h3>
               <a class="card__link" href="#">View case study</a>
@@ -165,7 +165,7 @@
           </article>
 
           <article class="card">
-            <figure class="card__media"><img src="assets/proj-4.jpg" alt="Design system board"></figure>
+            <figure class="card__media"><img src="images/project4.png" alt="Design system board"></figure>
             <div class="card__body">
               <h3 class="card__title">Design System</h3>
               <a class="card__link" href="#">View case study</a>
@@ -229,8 +229,65 @@
   </main>
 
   <!-- Footer -->
-  <footer id="contact" class="footer">
-    <div class="container footer__top">
+  <footer id="contact" class="container footer">
+
+    <div>
+
+    </div>
+
+    <section class="footer_bottom">
+      <ul class="footer__meta">
+        <li>
+          <a aria-label="Email" href="#" class="social__link">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+          <span>parvathyk.official@gmail.com</span>
+        </li>
+        <li>
+          <a aria-label="Location" href="#" class="social__link">
+            <i class="fa-solid fa-location-dot"></i>
+          </a>
+          <span> Munich, Germany</span>
+        </li>
+
+        <li>
+          <a aria-label="Mobile" href="#" class="social__link">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </a>
+          <span> +49 155 1086 1542</span>
+        </li>
+      </ul>
+
+      <div>
+        <article class="available-now"><span class="dot"></span>Available now for new projects</article>
+        <article class="follow-me">Follow me</article>
+        <ul class="social social__footer">
+          <li>
+            <a aria-label="LinkedIn" href="#" class="social__link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a aria-label="Behance" href="#" class="social__link">
+              <i class="fab fa-behance"></i>
+            </a>
+          </li>
+          <li>
+            <a aria-label="Dribbble" href="#" class="social__link">
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </li>
+          <li>
+            <a aria-label="Instagram" href="#" class="social__link">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- <div class="container footer__top">
       <p class="status"><span class="dot" aria-hidden="true"></span> Available now for new projects</p>
       <a class="btn btn--primary" href="mailto:parvathyx.official@gmail.com">Get in touch</a>
     </div>
@@ -248,7 +305,7 @@
 
     <div class="footer__bottom">
       <div class="container"><small>© <span id="year"></span> Parvathy Krishnan</small></div>
-    </div>
+    </div> -->
   </footer>
 
   <script src="app.js" defer></script>
