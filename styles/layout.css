@@ -6,14 +6,9 @@ body {
 }
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     height: 100px;
     padding: 14px 20px;
     background: var(--bg-color);
@@ -30,9 +25,6 @@ header {
     gap: 8px
 }
 
-
-
-
 .nav__list {
     display: flex;
     flex-direction: column;
@@ -44,7 +36,6 @@ header {
 
     font-size: 14px;
 }
-
 
 .nav__list a {
     color: var(--nav-color);
@@ -137,7 +128,7 @@ header {
     display: flex;
     gap: 8px;
     border-radius: 999px;
-    padding: 10px 16px;
+    padding: 15px 20px;
     font-weight: 700;
     border: 1px solid transparent;
     position: relative;
@@ -169,13 +160,13 @@ header {
     display: block;
 }
 
-.btn--ghost {
+.btn--secondary {
     background: var(--surface);
     border-color: var(--border);
     color: var(--ink)
 }
 
-.btn--ghost:hover {
+.btn--secondary:hover {
     background: #f6f6ff;
 }
 
@@ -264,6 +255,42 @@ header {
   margin-right: 8px;
   vertical-align: middle
 }
+
+.page-gap {
+    padding: 0 20px;
+}
+
+
+
+/* Sections */
+.section {
+  padding: 56px 30px;
+}
+
+.section--alt {
+  background: linear-gradient(var(--bg), var(--bg-soft))
+}
+
+.section__title {
+  margin: 6px 0 0;
+  font-size: 28px
+}
+
+.section__lede {
+  color: var(--muted);
+  margin: 8px 0 0
+}
+
+.sections-title {
+    color: var(--section-title-color);
+    border: 1px solid var(--section-title-color);
+    text-align: center;
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: 18px;
+    margin: 0;
+}
+
 
 @media (min-width: 768px) {
 
