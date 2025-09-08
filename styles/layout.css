@@ -5,6 +5,10 @@ body {
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -39,6 +43,7 @@ header {
 
 .nav__list a {
     color: var(--nav-color);
+    cursor: pointer;
 }
 
 .nav__list a:hover {
@@ -50,7 +55,7 @@ header {
     position: relative;
     width: 42px;
     height: 38px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--primary);
     border-radius: 10px;
     cursor: pointer;
 }
@@ -205,18 +210,20 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 
 
 .footer__meta {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .footer__meta li {
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -247,13 +254,13 @@ header {
 
 
 .dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  margin-right: 8px;
-  vertical-align: middle
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 8px;
+    vertical-align: middle
 }
 
 .page-gap {
@@ -264,21 +271,21 @@ header {
 
 /* Sections */
 .section {
-  padding: 56px 30px;
+    padding: 56px 30px;
 }
 
 .section--alt {
-  background: linear-gradient(var(--bg), var(--bg-soft))
+    background: linear-gradient(var(--bg), var(--bg-soft))
 }
 
 .section__title {
-  margin: 6px 0 0;
-  font-size: 28px
+    margin: 6px 0 0;
+    font-size: 28px
 }
 
 .section__lede {
-  color: var(--muted);
-  margin: 8px 0 0
+    color: var(--muted);
+    margin: 8px 0 0
 }
 
 .sections-title {
@@ -289,6 +296,26 @@ header {
     padding: 4px 16px;
     font-size: 18px;
     margin: 0;
+}
+
+.footer_social {
+    padding: 10px 0;
+}
+
+.theme-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--icon-bg);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.theme-switch .fa-solid {
+    font-size: 30px;
 }
 
 
@@ -315,16 +342,34 @@ header {
 
         flex-direction: column;
     }
+
+    .footer_bottom {
+        flex-direction: row;
+    }
+
+    .theme-switch {
+        position: absolute;
+        bottom: 50px;
+        right: 10px;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 767px) {
     .nav {
         position: absolute;
-        inset: 64px 16px auto 16px;
+        width: 82%;
+        top: 8%;
+        left: 14%;
         display: none;
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 12px;
         box-shadow: var(--shadow);
+        z-index: 11;
+    }
+
+    .open {
+        display: block;
     }
 }

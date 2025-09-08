@@ -13,7 +13,7 @@
     align-items: flex-start;
 }
 
-.about p {
+.about-me {
     color: var(--muted)
 }
 
@@ -76,5 +76,9 @@
     .about {
         max-width: 40%;
         margin-right: 10%;
+    }
+
+    .footer__meta {
+        margin-bottom: 0;
     }
 }
