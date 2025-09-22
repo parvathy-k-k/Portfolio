@@ -1,12 +1,12 @@
 body {
     margin: 0;
-    background: var(--bg-color);
+    background: var(--surface-page);
     color: var(--ink);
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -15,7 +15,6 @@ header {
     align-items: center;
     height: 100px;
     padding: 14px 20px;
-    background: var(--bg-color);
 }
 
 .logo {
@@ -42,47 +41,11 @@ header {
 }
 
 .nav__list a {
-    color: var(--nav-color);
+    color: var(--text-heading);
     cursor: pointer;
+    font-size: 32px;
 }
 
-.nav__list a:hover {
-    color: var(--ink);
-}
-
-.nav-toggle {
-    display: block;
-    position: relative;
-    width: 42px;
-    height: 38px;
-    border: 1px solid var(--primary);
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.nav-toggle__bar,
-.nav-toggle__bar::before,
-.nav-toggle__bar::after {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 2px;
-    background: var(--ink);
-    content: ""
-}
-
-.nav-toggle__bar {
-    top: 50%
-}
-
-.nav-toggle__bar::before {
-    top: -6px
-}
-
-.nav-toggle__bar::after {
-    top: 6px
-}
 
 .container {
     margin-inline: auto;
@@ -111,6 +74,7 @@ header {
 
     list-style: none;
     padding: 0;
+    margin-top: 40px;
 }
 
 .social__link {
@@ -119,8 +83,8 @@ header {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--icon-bg);
-    color: var(--ink);
+    background: var(--icon-gradient);
+    color: var(--other-color);
     font-weight: 700;
 }
 
@@ -140,16 +104,8 @@ header {
 }
 
 .btn--primary {
-    background: var(--primary);
-    color: #fff;
-}
-
-.btn--primary:hover {
-    text-decoration: none;
-    background-color: transparent;
-    border: 1px solid var(--primary);
-    color: var(--ink);
-    transition: 0.3s ease-in-out;
+    background: var(--button-gradient);
+    color: var(--text-button);
 }
 
 /* Arrow icon initially hidden */
@@ -363,18 +319,20 @@ header {
 @media (max-width: 767px) {
     .nav {
         position: absolute;
-        width: 82%;
-        top: 8%;
-        left: 14%;
+        width: 100%;
+        top: 11%;
+        left: 0;
         display: none;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        box-shadow: var(--shadow);
+        background: var(--surface-page);
         z-index: 11;
+        height: 89%;
+        transition: left 0.3s ease;
+        padding-left: 20px;
     }
 
     .open {
-        display: block;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 }

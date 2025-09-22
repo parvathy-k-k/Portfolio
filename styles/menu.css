@@ -1,0 +1,99 @@
+:root {
+  --menu-bg: #121212;
+  --menu-text: #FFFFFF;
+  --hamburger-color: #FFFFFF;
+  --menu-width: 280px;
+  --transition-speed: 0.3s;
+}
+
+.menu-container {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Hamburger (2 lines) */
+.hamburger {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 2px;
+  background: var(--other-color);
+  transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+.hamburger.open .top {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open .bottom {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Side menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -var(--menu-width);
+  width: var(--menu-width);
+  height: 100vh;
+  background: var(--menu-bg);
+  color: var(--menu-text);
+  transition: left var(--transition-speed) ease;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1005;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0 0;
+}
+
+.menu-list li {
+  margin-bottom: 24px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Overlay shading when menu open */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed) ease;
+  z-index: 1002;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}

@@ -34,25 +34,24 @@ class ThemeManager {
             this.setTheme(current === 'dark' ? 'light' : 'dark');
         });
 
-        // Navigation toggle
-        const navToggle = document.querySelector('.nav-toggle');
+        const hamburger = document.getElementById('hamburger');
         const nav = document.getElementById('nav');
-        if (navToggle && nav) {
-            navToggle.addEventListener('click', () => {
-                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-                navToggle.setAttribute('aria-expanded', String(!expanded));
-                nav.classList.toggle('open');
-            });
 
-            nav.addEventListener('click', (event) => {
-                const target = event.target;
-                // Check if the clicked element or its ancestor is an anchor inside nav
-                if (target.tagName === 'A' || target.closest('a')) {
-                    nav.classList.remove('open');
-                    toggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            nav.classList.toggle('open');
+        });
+
+        nav.addEventListener('click', (event) => {
+            const target = event.target;
+            // Check if the clicked element or its ancestor is an anchor inside nav
+            if (target.tagName === 'A' || target.closest('a')) {
+                nav.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.classList.toggle('open');
+            }
+        });
+
     }
 
     setTheme(theme) {
@@ -60,12 +59,12 @@ class ThemeManager {
         localStorage.setItem('theme', theme);
 
         if (theme === 'dark') {
-            this.icon.classList.replace('fa-sun', 'fa-moon');
-            this.toggleBtn.setAttribute('aria-label', 'Switch to light theme');
+            // this.icon.classList.replace('fa-sun', 'fa-moon');
+            // this.toggleBtn.setAttribute('aria-label', 'Switch to light theme');
             if (this.logo) this.logo.src = this.logoDarkSrc;
         } else {
-            this.icon.classList.replace('fa-moon', 'fa-sun');
-            this.toggleBtn.setAttribute('aria-label', 'Switch to dark theme');
+            // this.icon.classList.replace('fa-moon', 'fa-sun');
+            // this.toggleBtn.setAttribute('aria-label', 'Switch to dark theme');
             if (this.logo) this.logo.src = this.logoLightSrc;
         }
     }
@@ -83,6 +82,6 @@ const themeManager = new ThemeManager({
     iconId: 'switchIcon',
     logoSelector: '.logo',
     yearId: 'year',
-    logoLightSrc: './images/logo.png',
-    logoDarkSrc: './images/logo_dark.png'
+    logoLightSrc: './images/logo_new.svg',
+    logoDarkSrc: './images/logo_new.svg'
 });

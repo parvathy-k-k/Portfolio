@@ -1,4 +1,30 @@
 :root {
+
+  --surface-page: #151515;
+  --surface-action: #11DCC7;
+  --surface-action-hover: var(--surface-page);
+  --surface-card-700: #303030;
+  --surface-card-750: #252525;
+  --surface-label: #096D4F;
+  --surface-footer: #000000;
+  --surface-photo-bg: #ECECEC;
+
+  --text-heading: var(--surface-photo-bg);
+  --text-body: #D6D6D6;
+  --text-button: var(--surface-page);
+  --text-tertiary-button: #12DB9E;
+  --text-label: var(--surface-photo-bg);
+  --text-gradient-from: var(--surface-action); 
+  --text-gradient-to: var(--text-tertiary-button); 
+  --text-gradient: linear-gradient(to right, var(--text-gradient-from), var(--text-gradient-to));
+
+  --button-fill-from: var(--surface-action); 
+  --button-fill-to: #0DA595;
+  --button-gradient: linear-gradient(to right, var(--button-fill-from), var(--button-fill-to));
+
+  --icon-gradient: radial-gradient(circle, #2e2e2e 40%, #1a1a1a 100%);
+  --other-color: #ffffff;
+
   --bg-color: #FBFCFF;
   --ink: #0f1222;
   --nav-color: #4A4949;
@@ -22,9 +48,9 @@
   --bg-soft: #fafafe;
   --hero-grad: radial-gradient(1000px 420px at 50% -50%, #efeefe 0%, transparent 70%);
   --surface: #ffffff;
-  
+
   --muted: #5f6280;
-  
+
   --primary-weak: #efeefe;
   --chip: #f2f3f7;
   --accent: #36dc97;
@@ -34,7 +60,7 @@
   --color-primary: #0082EB;
   --color-button: #000727;
   --color-pg-background: #FBFCFF;
-  
+
 
 }
 
@@ -55,10 +81,10 @@
   --bg-soft: #0f1324;
   --hero-grad: radial-gradient(1000px 420px at 50% -50%, rgba(108, 99, 255, .15), transparent 70%);
   --surface: #14182a;
-  
+
   --ink: #e8ebff;
   --muted: #b6b9d4;
-  
+
   --primary-weak: rgba(140, 134, 255, .15);
   --chip: #1b2139;
   --accent: #2bd391;
