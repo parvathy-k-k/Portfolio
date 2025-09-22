@@ -206,10 +206,10 @@ header {
     padding: 25px;
 }
 
-.footer_bottom {
+.footer__top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 }
 
@@ -250,6 +250,7 @@ header {
     padding: 10px;
     color: var(--ink-contrast);
     border-radius: 25px;
+    margin-bottom: 50%;
 }
 
 
@@ -343,7 +344,7 @@ header {
         flex-direction: column;
     }
 
-    .footer_bottom {
+    .footer__top {
         flex-direction: row;
     }
 
@@ -352,6 +353,10 @@ header {
         bottom: 50px;
         right: 10px;
         flex-direction: column;
+    }
+
+    .available-now {
+        margin-bottom: 0;
     }
 }
 

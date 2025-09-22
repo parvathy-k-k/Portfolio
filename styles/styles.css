@@ -118,14 +118,6 @@
 }
 
 
-.footer__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 22px 0
-}
-
 .status {
   margin: 0;
   font-weight: 700

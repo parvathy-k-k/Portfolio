@@ -30,6 +30,12 @@
   --accent: #36dc97;
   --shadow: 0 6px 22px rgba(20, 16, 48, .08);
 
+
+  --color-primary: #0082EB;
+  --color-button: #000727;
+  --color-pg-background: #FBFCFF;
+  
+
 }
 
 :root[data-theme="dark"] {
