@@ -28,6 +28,16 @@ header {
     gap: 8px
 }
 
+.sub__heading {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 14px;
+    margin: 0;
+
+    text-transform: uppercase;
+}
+
 .nav__list {
     display: flex;
     flex-direction: column;
@@ -80,8 +90,8 @@ header {
 .social__link {
     display: inline-grid;
     place-items: center;
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: var(--icon-gradient);
     color: var(--other-color);
@@ -101,9 +111,10 @@ header {
     font-weight: 700;
     border: 1px solid transparent;
     position: relative;
+    font-size: 14px;
 }
 
-.btn--primary {
+.btn__primary {
     background: var(--button-gradient);
     color: var(--text-button);
 }
@@ -117,7 +128,7 @@ header {
 }
 
 /* Show and slide arrow on hover */
-.btn--primary:hover .arrow {
+.btn__primary:hover .arrow {
     display: block;
 }
 
