@@ -1,5 +1,7 @@
 
-/* Projects */
+#journey {
+  padding: 56px 15px;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -9,23 +11,18 @@
 
 .card {
   grid-column: span 6;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 6px;
   overflow: hidden;
-  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  transition: transform .15s ease, box-shadow .15s ease
+  transition: transform .15s ease, box-shadow .15s ease;
+  background: var(--surface-card-700);
+  padding: 8px;
 }
 
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(20, 16, 48, .12)
-}
-
-[data-theme="dark"] .card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .4)
 }
 
 .card__media img {
@@ -36,20 +33,25 @@
 }
 
 .card__body {
-  padding: 14px 16px 18px;
+  padding: 12px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px
+  gap: 12px;
+  
 }
 
 .card__title {
   margin: 0;
-  font-size: 16px
+  color: var(--text-label);
+  font-size: 16px;
 }
 
 .card__link {
-  font-weight: 700
+  font-weight: 600;
+  color: var(--text-tertiary-button);
+  font-size: 14px;
+  text-decoration: underline;
 }
 
 .center {
@@ -62,27 +64,13 @@
 .timeline {
   list-style: none;
   margin: 0;
-  padding-left: 22px;
+  padding: 0;
 }
 
-.timeline__item {
-  position: relative;
-  margin: 0 0 22px
-}
 
-.timeline__dot {
-  position: absolute;
-  left: -10px;
-  top: 8px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--primary);
-  box-shadow: 0 0 0 6px var(--primary-weak)
-}
 
 .timeline__content {
-  background: var(--surface);
+  background: var(--surface-card-750);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 14px 16px;
@@ -93,8 +81,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-content: space-between;
-  flex-wrap: wrap
+}
+
+.timeline__role {
+  color: var(--text-label);
+  padding: 0;
+  margin: 0;
 }
 
 .timeline__meta {
@@ -104,11 +96,11 @@
 
 .badge {
   display: inline-block;
-  background: var(--primary-weak);
-  color: var(--primary);
-  border-radius: 999px;
+  background: var(--surface-label);
+  color: var(--text-label);
+  border-radius: 10px;
   padding: 4px 10px;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 12px
 }
 

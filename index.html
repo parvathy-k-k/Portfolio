@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="styles/menu.css" />
   <script>
-    // apply saved theme before paint to avoid flash
     (function () {
       const saved = localStorage.getItem('theme');
       if (saved) { document.documentElement.dataset.theme = saved; }
@@ -28,15 +27,10 @@
 </head>
 
 <body>
-  <!-- Header -->
   <header class="header container">
     <img src="./images/logo_new.svg" alt="PK" class="logo">
 
     <div class="header__actions">
-      <!-- <button class="nav-toggle" aria-expanded="false" aria-controls="nav">
-        <span class="nav-toggle__bar"></span><span class="sr-only">Menu</span>
-      </button> -->
-
       <div class="hamburger" id="hamburger">
         <span class="line top"></span>
         <span class="line bottom"></span>
@@ -53,16 +47,15 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section id="top" class="hero">
     <div class="container hero__inner column-center">
       <div class="hero__avatar">
         <img src="./images/profile_pic.png" alt="Portrait of Parvathy" />
       </div>
       <div class="hero__content column-center">
-        <h3 class="sub__heading">UI/UX DESIGNER</h3>
-        <h1 class="hero__title">Hey, I’m Parvathy</h1>
-        <p class="hero__desc">
+        <h3 class="section__subtitle">UI/UX DESIGNER</h3>
+        <h1 class="section__title">Hey, I’m Parvathy</h1>
+        <p class="section__description">
           I turn messy tech into “oh, that’s easy” designs. I get excited about turning messy problems into clean,
           intuitive solutions.
         </p>
@@ -98,19 +91,13 @@
         </a>
       </li>
     </ul>
-
-    <!-- <article class="theme-switch" id="themeToggle">
-      <i id="switchIcon" class="fa-solid fa-sun"></i>
-    </article> -->
-
   </section>
 
   <main id="main">
-    <!-- About -->
     <section id="about" class="section container">
       <div class="about">
-        <h3 class="sub__heading">About</h3>
-        <p class="about__me">
+        <h3 class="section__subtitle">About</h3>
+        <p class="section__description">
           4+ years of experience in the design field, specializing in creating interfaces that are both visually
           appealing and highly functional. Passionate about crafting seamless, user-centered digital experiences that
           balance aesthetics with usability, making every interaction feel natural. Dedicated to problem-solving and
@@ -142,18 +129,18 @@
       </div>
     </section>
 
-    <!-- Projects -->
     <section id="projects" class="section section--alt">
       <div class="container">
         <header class="section__header">
-          <h3 class="sub__heading">Case Studies</h3>
-          <h2 class="section__title">Featured projects and case studies</h2>
-          <p class="section__lede">Work that showcases process and problem‑solving.</p>
+          <h3 class="section__subtitle">Case Studies</h3>
+          <h2 class="section__title">Projects and case studies</h2>
+          <p class="section__description">Here are some of my recent projects that showcase my design process and
+            problem-solving approach.</p>
         </header>
 
         <div class="grid">
           <article class="card">
-            <figure class="card__media"><img src="images/project1.png" alt="Traceability app mockups"></figure>
+            <img src="images/project1.png" alt="Traceability app mockups">
             <div class="card__body">
               <h3 class="card__title">Traceability App</h3>
               <a class="card__link" href="https://www.behance.net/gallery/199583335/Traceme" target="_blank">View case
@@ -162,7 +149,7 @@
           </article>
 
           <article class="card">
-            <figure class="card__media"><img src="images/project2.png" alt="Interios furniture UI"></figure>
+            <img src="images/project2.png" alt="Interios furniture UI">
             <div class="card__body">
               <h3 class="card__title">Interios</h3>
               <a class="card__link" href="https://www.behance.net/gallery/149091839/Furniture-Purchasing-Mobile-App"
@@ -171,81 +158,61 @@
           </article>
 
           <article class="card">
-            <figure class="card__media"><img src="images/project3.png" alt="Expense manager dashboards"></figure>
+            <img src="images/project3.png" alt="Expense manager dashboards">
             <div class="card__body">
               <h3 class="card__title">Expense Manager</h3>
               <a class="card__link" href="https://www.behance.net/gallery/148474321/Expense-manager-Mobile-UI"
                 target="_blank">View case study</a>
             </div>
           </article>
-
-          <article class="card">
-            <figure class="card__media"><img src="images/project4.png" alt="Design system board"></figure>
-            <div class="card__body">
-              <h3 class="card__title">Design System</h3>
-              <a class="card__link" href="https://www.behance.net/gallery/199640089/Craftopia-An-online-store-dashboard"
-                target="_blank">View case study</a>
-            </div>
-          </article>
         </div>
 
         <div class="center">
-          <a class="btn btn__primary" href="https://www.behance.net/parvathkrishna1">View all projects</a>
+          <a class="btn btn__primary" href="https://www.behance.net/parvathkrishna1">View more projects</a>
         </div>
       </div>
     </section>
 
-    <!-- Journey -->
     <section id="journey" class="section container">
       <header class="section__header">
-        
-        <h3 class="sub__heading">Projects</h3>
+
+        <h3 class="section__subtitle">Projects</h3>
         <h2 class="section__title">Professional journey</h2>
       </header>
 
       <ol class="timeline" role="list">
-        <li class="timeline__item">
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__content">
-            <div class="timeline__head">
-              <h3 class="timeline__role">Junior UI/UX Designer</h3>
-              <span class="badge">Full time</span>
-            </div>
-            <p class="timeline__meta">CIED Technologies Pvt Ltd, India • 2023—2025</p>
-            <ul class="timeline__list">
-              <li>Built user‑friendly mobile & web interfaces with strong accessibility.</li>
-              <li>Wireframes, prototypes, and high‑fidelity mockups in Figma.</li>
-              <li>Usability testing and iterative UI improvements.</li>
-            </ul>
-          </div>
+        <li class="timeline__content">
+          <article class="timeline__head">
+            <h3 class="timeline__role">Junior UI/UX Designer</h3>
+            <span class="badge">Full time</span>
+          </article>
+          <p class="timeline__meta">CIED Technologies Pvt Ltd, India • 2023—2025</p>
+          <ul class="timeline__list">
+            <li>Built user‑friendly mobile & web interfaces with strong accessibility.</li>
+            <li>Wireframes, prototypes, and high‑fidelity mockups in Figma.</li>
+            <li>Usability testing and iterative UI improvements.</li>
+          </ul>
         </li>
 
-        <li class="timeline__item">
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__content">
-            <div class="timeline__head">
-              <h3 class="timeline__role">Interior 3D Designer</h3>
-              <span class="badge">Full time</span>
-            </div>
-            <p class="timeline__meta">Livspace, India • 2022—2023</p>
-          </div>
+        <li class="timeline__content">
+          <article class="timeline__head">
+            <h3 class="timeline__role">Interior 3D Designer</h3>
+            <span class="badge">Full time</span>
+          </article>
+          <p class="timeline__meta">Livspace, India • 2022—2023</p>
         </li>
 
-        <li class="timeline__item">
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__content">
-            <div class="timeline__head">
-              <h3 class="timeline__role">3D Designer</h3>
-              <span class="badge badge--subtle">Freelance</span>
-            </div>
-            <p class="timeline__meta">Self‑employed, India • 2020—2022</p>
-          </div>
+        <li class="timeline__content">
+          <article class="timeline__head">
+            <h3 class="timeline__role">3D Designer</h3>
+            <span class="badge badge--subtle">Freelance</span>
+          </article>
+          <p class="timeline__meta">Self‑employed, India • 2020—2022</p>
         </li>
       </ol>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer id="contact" class="container footer">
     <section class="footer__top">
       <ul class="footer__meta">

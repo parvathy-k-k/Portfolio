@@ -30,13 +30,6 @@
     object-fit: contain
 }
 
-.hero__title {
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--text-heading);
-    line-height: 38px;
-}
-
 .hero__designation {
     background: var(--text-gradient);
     -webkit-background-clip: text;
