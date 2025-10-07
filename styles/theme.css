@@ -17,6 +17,7 @@
   --text-gradient-from: var(--surface-action); 
   --text-gradient-to: var(--text-tertiary-button); 
   --text-gradient: linear-gradient(to right, var(--text-gradient-from), var(--text-gradient-to));
+  --menu-gradient: linear-gradient(to right, var(--surface-action), var(--text-tertiary-button));
 
   --button-fill-from: var(--surface-action); 
   --button-fill-to: #0DA595;

@@ -13,6 +13,10 @@
     align-items: center;
 }
 
+.about_title {
+    display: flex;
+}
+
 .about .section__subtitle {
     padding-bottom: 30px;
 }
@@ -89,4 +93,8 @@
     .footer__meta {
         margin-bottom: 0;
     }
-}
+
+    .about_title {
+        display: none;
+    }
+}   

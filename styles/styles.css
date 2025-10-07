@@ -62,7 +62,6 @@
 
 /* Timeline */
 .timeline {
-  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -74,7 +73,8 @@
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 14px 16px;
-  box-shadow: var(--shadow)
+  box-shadow: var(--shadow);
+  margin: 20px 0;
 }
 
 .timeline__head {
@@ -91,7 +91,13 @@
 
 .timeline__meta {
   margin: 6px 0 10px;
-  color: var(--muted)
+  color: var(--text-body);
+  font-size: 14px;
+}
+
+.timeline__list {
+  color: var(--text-body);
+  font-size: 14px;
 }
 
 .badge {

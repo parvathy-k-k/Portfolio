@@ -71,6 +71,10 @@ header {
     line-height: 24px;
 }
 
+.tagline {
+    max-width: 320px;
+}
+
 
 .container {
     margin-inline: auto;
@@ -99,12 +103,9 @@ header {
     background: var(--icon-gradient);
     color: var(--other-color);
     font-weight: 700;
-}
-
-.social__link:hover {
-    background: var(--primary-weak);
     text-decoration: none;
 }
+
 
 .btn {
     display: flex;
@@ -267,9 +268,12 @@ header {
 
 
 @media (min-width: 768px) {
-
     .nav {
         display: block;
+        background: var(--menu-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 16px;
     }
 
     .nav-toggle {
@@ -284,10 +288,10 @@ header {
 
     .desktop_social_hero {
         position: absolute;
-        bottom: 50px;
+        top: 40%;
         left: 10px;
-
         flex-direction: column;
+        margin: 0;
     }
 
     .footer__top {
@@ -304,6 +308,14 @@ header {
     .available-now {
         margin-bottom: 0;
     }
+
+    .header__actions {
+        display: none;
+    }
+
+    .tagline {
+        max-width: 480px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -318,6 +330,7 @@ header {
         height: 89%;
         transition: left 0.3s ease;
         padding-left: 20px;
+        color: var(--text-heading);
     }
 
     .open {
