@@ -1,7 +1,7 @@
-
 #journey {
   padding: 56px 15px;
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -38,7 +38,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  
+
 }
 
 .card__title {
@@ -85,19 +85,32 @@
 
 .timeline__role {
   color: var(--text-label);
+  font-weight: 400;
+  font-size: 16px;
   padding: 0;
   margin: 0;
 }
 
 .timeline__meta {
-  margin: 6px 0 10px;
+  margin: 10px 0;
   color: var(--text-body);
   font-size: 14px;
+  display: flex;
+}
+
+.timeline__meta img {
+  margin-right: 10px;
 }
 
 .timeline__list {
   color: var(--text-body);
   font-size: 14px;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.timeline__list li {
+  list-style: disc;
 }
 
 .badge {
@@ -107,14 +120,8 @@
   border-radius: 10px;
   padding: 4px 10px;
   font-weight: 700;
-  font-size: 12px
+  font-size: 12px;
 }
-
-.badge--subtle {
-  background: #eaf3ff;
-  color: #1c6bd8
-}
-
 
 .status {
   margin: 0;

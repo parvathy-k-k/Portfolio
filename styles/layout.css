@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    padding: 14px 20px;
+    padding: 0 20px;
 }
 
 .logo {
@@ -78,7 +78,6 @@ header {
 
 .container {
     margin-inline: auto;
-    padding: 0 20px
 }
 
 
@@ -88,10 +87,13 @@ header {
     align-items: center;
     gap: 10px;
     position: relative;
-
     list-style: none;
     padding: 0;
     margin-top: 40px;
+}
+
+.social__link:hover {
+    background-color: var(--surface-page);
 }
 
 .social__link {
@@ -104,6 +106,12 @@ header {
     color: var(--other-color);
     font-weight: 700;
     text-decoration: none;
+    font-size: 22px;
+}
+
+.social__link__contact {
+    background: var(--bg);
+    color: black;
 }
 
 
@@ -199,7 +207,6 @@ header {
 
 
 .footer__meta li i {
-    background-color: var(--ink-contrast);
     border-radius: 50%;
 }
 
@@ -268,11 +275,27 @@ header {
 
 
 @media (min-width: 768px) {
+
+    .header .nav {
+        display: none;
+    }
+
     .nav {
         display: block;
         background: var(--menu-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        font-size: 16px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: fit-content;
+        bottom: 10%;
+        
+    }
+
+    .nav__list a {
         font-size: 16px;
     }
 
@@ -282,14 +305,16 @@ header {
 
     .nav__list {
         flex-direction: row;
-        padding: 0;
+        padding: 10px 20px;
         font-size: 16px;
+        border: 1px solid var(--Surface-dark-Cards-01, var(--surface-card-700));
+        border-radius: 20px;
     }
 
     .desktop_social_hero {
         position: absolute;
         top: 40%;
-        left: 10px;
+        left: 60px;
         flex-direction: column;
         margin: 0;
     }
@@ -316,13 +341,17 @@ header {
     .tagline {
         max-width: 480px;
     }
+
+    .container {
+        margin: 0 60px;
+    }
 }
 
 @media (max-width: 767px) {
     .nav {
         position: absolute;
         width: 100%;
-        top: 11%;
+        top: 20%;
         left: 0;
         display: none;
         background: var(--surface-page);
@@ -335,7 +364,6 @@ header {
 
     .open {
         display: flex;
-        justify-content: center;
         flex-direction: column;
     }
 }
