@@ -1,305 +1,455 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Parvathy Krishnan — Portfolio</title>
-  <meta name="description" content="UI/UX designer portfolio showcasing projects and journey." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles/theme.css" />
-  <link rel="stylesheet" href="styles/reset.css" />
-  <link rel="stylesheet" href="styles/layout.css" />
-  <link rel="stylesheet" href="styles/hero.css" />
-  <link rel="stylesheet" href="styles/projects.css" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="stylesheet" href="styles/menu.css" />
-  <script>
-    (function () {
-      const saved = localStorage.getItem('theme');
-      if (saved) { document.documentElement.dataset.theme = saved; }
-      document.documentElement.classList.remove('no-js');
-    })();
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parvathy | UI/UX Designer</title>
+    <meta name="description"
+        content="Portfolio of Parvathy, a UI/UX Designer turning messy tech into clean, intuitive solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="header container">
-    <img src="./images/logo_new.svg" alt="PK" class="logo">
 
-    <div class="header__actions">
-      <div class="hamburger" id="hamburger">
-        <span class="line top"></span>
-        <span class="line bottom"></span>
-      </div>
-    </div>
-
-    <nav id="nav" class="nav" aria-label="Primary">
-      <ul class="nav__list">
-        <li><a href="#top">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Case studies</a></li>
-        <li><a href="#journey">Journey</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./images/logo_new.svg" alt="PK" class="logo">
+        </div>
+        <div class="nav-controls">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
     </nav>
-  </header>
 
-  <nav id="nav" class="nav" aria-label="Primary">
-    <ul class="nav__list">
-      <li><a href="#top">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Case studies</a></li>
-      <li><a href="#journey">Journey</a></li>
-    </ul>
-  </nav>
-
-  <section id="top" class="hero">
-    <div class="container hero__inner column-center">
-      <div class="hero__avatar">
-        <img src="./images/profile_pic.png" alt="Portrait of Parvathy" />
-      </div>
-      <div class="hero__content column-center">
-        <h3 class="section__subtitle">UI/UX DESIGNER</h3>
-        <h1 class="section__title">Hey, I’m Parvathy</h1>
-        <p class="section__description tagline">
-          I turn messy tech into “oh, that’s easy” designs. I get excited about turning messy problems into clean,
-          intuitive solutions.
-        </p>
-        <div class="hero__cta">
-          <a class="btn btn__primary" href="#projects">
-            View projects
-            <i class="fa-solid fa-arrow-right arrow"></i>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <ul class="social desktop_social_hero">
-      <li>
-        <a aria-label="LinkedIn" href="#" class="social__link">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </li>
-      <li>
-        <a aria-label="Behance" href="#" class="social__link">
-          <i class="fab fa-behance"></i>
-        </a>
-      </li>
-      <li>
-        <a aria-label="Dribbble" href="#" class="social__link">
-          <i class="fab fa-dribbble"></i>
-        </a>
-      </li>
-      <li>
-        <a aria-label="Instagram" href="#" class="social__link">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <main id="main">
-    <section id="about" class="section container">
-      <div class="about">
-        <h3 class="section__subtitle about_title">About</h3>
-        <p class="section__description">
-          4+ years of experience in the design field, specializing in creating interfaces that are both visually
-          appealing and highly functional. Passionate about crafting seamless, user-centered digital experiences that
-          balance aesthetics with usability, making every interaction feel natural. Dedicated to problem-solving and
-          attention to detail, with a focus on enhancing overall user experience and bringing ideas to life through
-          thoughtful design.
-        </p>
-        <div class="about__cta">
-          <a class="btn btn__primary" href="./assets/resume.pdf" download>Download resume</a>
-        </div>
-      </div>
-      <div class="chips">
-        <div class="chips__row">
-          <span class="chip chips__main">SKills</span>
-          <span class="chip">User‑centric design</span>
-          <span class="chip">Wireframing</span>
-          <span class="chip">Problem solving</span>
-          <span class="chip">AI tools</span>
-          <span class="chip">Design tools</span>
-          <span class="chip">Attention to details</span>
-          <span class="chip">Prototyping</span>
-          <span class="chip">3D designing</span>
-        </div>
-        <div class="chips__row">
-          <span class="chip chips__main">Design tools</span>
-          <span class="chip">Figma</span>
-          <span class="chip">Adobe tools</span>
-          <span class="chip">SketchUp</span>
-          <span class="chip">Lumion</span>
-          <span class="chip">Blender</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section section--alt">
-      <div class="container">
-        <header class="section__header">
-          <h3 class="section__subtitle">Case studies</h3>
-          <h2 class="section__title">Projects and case studies</h2>
-          <p class="section__description">Here are some of my recent projects that showcase my design process and
-            problem-solving approach.</p>
-        </header>
-
-        <div class="grid">
-          <article class="card">
-            <img src="images/project1.png" alt="Traceability app mockups">
-            <div class="card__body">
-              <h3 class="card__title">Traceability App</h3>
-              <a class="card__link" href="https://www.behance.net/gallery/199583335/Traceme" target="_blank">View case
-                study</a>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <div class="logo-circle">
+                    <span>P</span><span>K</span>
+                </div>
             </div>
-          </article>
-
-          <article class="card">
-            <img src="images/project2.png" alt="Interios furniture UI">
-            <div class="card__body">
-              <h3 class="card__title">Interios</h3>
-              <a class="card__link" href="https://www.behance.net/gallery/149091839/Furniture-Purchasing-Mobile-App"
-                target="_blank">View case study</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="images/project3.png" alt="Expense manager dashboards">
-            <div class="card__body">
-              <h3 class="card__title">Expense Manager</h3>
-              <a class="card__link" href="https://www.behance.net/gallery/148474321/Expense-manager-Mobile-UI"
-                target="_blank">View case study</a>
-            </div>
-          </article>
+            <button id="menu-close" class="menu-close" aria-label="Close Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
         </div>
-
-        <div class="center">
-          <a class="btn btn__primary" target="_blank" href="https://www.behance.net/parvathkrishna1">View more
-            projects</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="journey" class="section container">
-      <header class="section__header">
-
-        <h3 class="section__subtitle">My Experience</h3>
-        <h2 class="section__title">Professional journey</h2>
-      </header>
-
-      <ol class="timeline" role="list">
-        <li class="timeline__content">
-          <article class="timeline__head">
-            <h3 class="timeline__role">Junior UI/UX Designer</h3>
-            <span class="badge">Full time</span>
-          </article>
-          <p class="timeline__meta">
-            <img src="./images/company.png" alt="company">
-            CIED Technologies Pvt Ltd, India
-          </p>
-          <p class="timeline__meta">
-            <img src="./images/calendar.png" alt="calendar-icon">
-            2023 - 2025
-          </p>
-          <ul class="timeline__list">
-            <li>Designed user-friendly web and mobile interfaces with a focus on usability, accessibility, and aesthetic
-              appeal.</li>
-            <li>Created wireframes, prototypes, and high-fidelity mockups in Figma, translating ideas into functional,
-              visually engaging designs.</li>
-            <li>Collaborated with developers and stakeholders on seamless implementation, conducted usability testing,
-              and designed illustrations and UI elements for game projects to enhance user engagement.</li>
-          </ul>
-        </li>
-
-        <li class="timeline__content">
-          <article class="timeline__head">
-            <h3 class="timeline__role">Interior 3D Designer</h3>
-            <span class="badge">Full time</span>
-          </article>
-          <p class="timeline__meta">
-            <img src="./images/company.png" alt="company">Livspace, India
-          </p>
-          <p class="timeline__meta">
-            <img src="./images/calendar.png" alt="calendar-icon">
-            2022—2023
-          </p>
-        </li>
-
-        <li class="timeline__content">
-          <article class="timeline__head">
-            <h3 class="timeline__role">3D Designer</h3>
-            <span class="badge">Freelance</span>
-          </article>
-          <p class="timeline__meta">
-            <img src="./images/company.png" alt="company">
-            Self‑employed, India
-          </p>
-
-          <p class="timeline__meta">
-            <img src="./images/calendar.png" alt="calendar-icon">
-            2020—2022
-          </p>
-        </li>
-      </ol>
-    </section>
-  </main>
-
-  <footer id="contact" class="container footer">
-    <section class="footer__top">
-      <ul class="footer__meta">
-        <li>
-          <a aria-label="Email" href="#" class="social__link social__link__contact">
-            <i class="fa-regular fa-envelope"></i>
-          </a>
-          <span>parvathyk.official@gmail.com</span>
-        </li>
-        <li>
-          <a aria-label="Location" href="#" class="social__link social__link__contact">
-            <i class="fa-solid fa-location-dot"></i>
-          </a>
-          <span> Munich, Germany</span>
-        </li>
-      </ul>
-
-      <div class="footer_social">
-        <article class="available-now"><span class="dot"></span>Available now for new projects</article>
-        <article class="follow-me">Follow me</article>
-        <ul class="social social__footer">
-          <li>
-            <a aria-label="LinkedIn" href="#" class="social__link">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-          <li>
-            <a aria-label="Behance" href="#" class="social__link">
-              <i class="fab fa-behance"></i>
-            </a>
-          </li>
-          <li>
-            <a aria-label="Dribbble" href="#" class="social__link">
-              <i class="fab fa-dribbble"></i>
-            </a>
-          </li>
-          <li>
-            <a aria-label="Instagram" href="#" class="social__link">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#case-studies">Case studies</a></li>
+            <li><a href="#journey">Journey</a></li>
         </ul>
-      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="hero" id="home">
+        <div class="container">
+            <div class="profile-image-container">
+                <div class="profile-image">
+                    <img src="./images/profile_pic.png" alt="Portrait of Parvathy" />
+                </div>
+            </div>
+
+            <h2 class="role-label">UI/UX DESIGNER</h2>
+            <h1 class="headline">Hey, I’m Parvathy</h1>
+            <p class="sub-headline">
+                I turn messy tech into “oh, that’s easy” designs. I get excited about turning messy problems into clean,
+                intuitive solutions.
+            </p>
+
+            <a href="#case-studies" class="cta-button">View projects</a>
+
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Behance">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 11h5" />
+                        <path d="M17.5 14c1.5 0 2.5-1 2.5-2.5S19 9 17.5 9h-2.5v5h2.5" />
+                        <path d="M6 14c1.5 0 2.5-1 2.5-2.5S7.5 9 6 9H3.5v5H6" />
+                        <path d="M6 9V7h5" />
+                        <path d="M3.5 7v12" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Dribbble">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path
+                            d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-5.38c-3.72-3.85-8.04-4.26-15.49-1.76m5.65 3.84c.94-1.38 2.27-3.04 4.38-5.23m-4.38 5.23c-3.66-1.92-5.19-3.8-6.1-5.23m14.5-2.61c-3.72-3.85-8.04-4.26-15.49-1.76">
+                        </path>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sticky Navigation (Desktop) -->
+    <nav class="sticky-nav">
+        <div class="nav-pill">
+            <a href="#about">ABOUT</a>
+            <a href="#case-studies">CASE STUDIES</a>
+            <a href="#journey">JOURNEY</a>
+            <a href="#contact">GET IN TOUCH</a>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title mobile-only">ABOUT</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>4+ years of experience in the design field, specializing in creating interfaces that are both
+                        visually appealing and highly functional. Passionate about crafting seamless, user-centered
+                        digital experiences that balance aesthetics with usability, making every interaction feel
+                        natural.</p>
+                    <p>Dedicated to problem-solving and attention to detail, with a focus on enhancing overall user
+                        experience and bringing ideas to life through thoughtful design.</p>
+                    <a href="#" href="./assets/resume.pdf" class="download-btn">Download resume</a>
+                </div>
+                <div class="about-skills">
+                    <div class="skill-group">
+                        <span class="tag category">Skills</span>
+                        <span class="tag">User centric designing</span>
+                        <span class="tag">Wireframing</span>
+                        <span class="tag">Problem solving</span>
+                        <span class="tag">AI tools</span>
+                        <span class="tag">Design tools</span>
+                        <span class="tag">Prototyping</span>
+                        <span class="tag">3D designing</span>
+                        <span class="tag">Attention to details</span>
+                    </div>
+                    <div class="skill-group">
+                        <span class="tag category">Design tools</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Adobe tools</span>
+                        <span class="tag">AutoCAD</span>
+                        <span class="tag">Sketchup</span>
+                        <span class="tag">Lumion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <div class="footer__bottom">
-      <div class="container"><small>© <span id="year"></span> Parvathy Krishnan</small></div>
-    </div>
-  </footer>
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CASE STUDIES</span> <!-- Mobile uses this style -->
+                <span class="desktop-tag">CASE STUDIES</span>
+                <h2 class="section-heading">Projects and case studies</h2>
+                <p class="section-subheading">Here are some of my recent projects that showcase my design process and
+                    problem-solving approach.</p>
+            </div>
 
-  <script src="./app.js" defer></script>
+            <div class="projects-grid">
+                <!-- Card 1 -->
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="images/project1.png" alt="Traceability app mockups">
+                    </div>
+                    <div class="card-content">
+                        <h3>Traceability App</h3>
+                        <a href="https://www.behance.net/gallery/199583335/Traceme" target="_blank"
+                            class="view-case-study">View case study</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="images/project3.png" alt="Expense manager dashboards">
+                    </div>
+                    <div class="card-content">
+                        <h3>Expense manager</h3>
+                        <a href="https://www.behance.net/gallery/148474321/Expense-manager-Mobile-UI" target="_blank"
+                            class="view-case-study">View case study</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="project-card">
+                    <div class="card-image">
+                        <img src="images/project2.png" alt="Interios furniture UI">
+                    </div>
+                    <div class="card-content">
+                        <h3>Interios</h3>
+                        <a href="https://www.behance.net/gallery/149091839/Furniture-Purchasing-Mobile-App"
+                            target="_blank" class="view-case-study">View case study</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="view-more-container">
+                <a href="#" class="view-more-btn">View more projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">JOURNEY</span>
+                <span class="desktop-tag">MY EXPERIENCE</span>
+                <h2 class="section-heading">Professional journey</h2>
+            </div>
+
+            <div class="experience-timeline">
+                <!-- Experience Card 1 -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="role-title">
+                            <h3>Junior UI/UX Designer</h3>
+                            <span class="badge full-time">Full time</span>
+                        </div>
+                        <div class="company-info">
+                            <div class="info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 21h18" />
+                                    <path d="M5 21V7l8-4 8 4v14" />
+                                    <path d="M17 21v-8.5a2.5 2.5 0 0 0-5 0V21" />
+                                </svg>
+                                <span>CIED Technologies Pvt Ltd, India</span>
+                            </div>
+                            <div class="info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>2023 - 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="exp-details">
+                        <ul>
+                            <li>Designed user-friendly web and mobile interfaces with a focus on usability,
+                                accessibility, and aesthetic appeal.</li>
+                            <li>Created wireframes, prototypes, and high-fidelity mockups in Figma, translating ideas
+                                into functional, visually engaging designs.</li>
+                            <li>Collaborated with developers and stakeholders on seamless implementation, conducted
+                                usability testing, and designed illustrations and UI elements for game projects to
+                                enhance user engagement.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Card 2 -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="role-title">
+                            <h3>Interior 3D Designer</h3>
+                            <span class="badge full-time">Full time</span>
+                        </div>
+                        <div class="company-info">
+                            <div class="info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 21h18" />
+                                    <path d="M5 21V7l8-4 8 4v14" />
+                                    <path d="M17 21v-8.5a2.5 2.5 0 0 0-5 0V21" />
+                                </svg>
+                                <span>Livspace, India</span>
+                            </div>
+                            <div class="info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>2022 - 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Card 3 -->
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="role-title">
+                            <h3>3D Designer</h3>
+                            <span class="badge freelance">Freelance</span>
+                        </div>
+                        <div class="company-info">
+                            <div class="info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span>Self employed</span>
+                            </div>
+                            <div class="info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>2020 - 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <span class="signature">Parvathy</span>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Munich, Germany</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:parvathyk.official@gmail.com">parvathyk.official@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                        <a href="tel:+4915510861542">+49 15510861542</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="availability-badge">
+                    <span class="dot"></span>
+                    Available now for new projects
+                </div>
+
+                <div class="social-section">
+                    <h4>Follow me</h4>
+                    <div class="footer-social-links">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Behance">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M16 11h5" />
+                                <path d="M17.5 14c1.5 0 2.5-1 2.5-2.5S19 9 17.5 9h-2.5v5h2.5" />
+                                <path d="M6 14c1.5 0 2.5-1 2.5-2.5S7.5 9 6 9H3.5v5H6" />
+                                <path d="M6 9V7h5" />
+                                <path d="M3.5 7v12" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Dribbble">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path
+                                    d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-5.38c-3.72-3.85-8.04-4.26-15.49-1.76m5.65 3.84c.94-1.38 2.27-3.04 4.38-5.23m-4.38 5.23c-3.66-1.92-5.19-3.8-6.1-5.23m14.5-2.61c-3.72-3.85-8.04-4.26-15.49-1.76">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
