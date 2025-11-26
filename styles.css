@@ -1,0 +1,861 @@
+/* CSS Variables based on the color mapping */
+:root {
+    --surface-page: #151515;
+    --surface-card: #303030;
+    --text-heading: #ECECEC;
+    --text-body: #D6D6D6;
+    --primary-cyan: #11DCC7;
+    --primary-hover: #0FBCA8;
+    --text-on-primary: #151515;
+    --icon-color: #FFFFFF;
+
+    --font-main: 'Inter', sans-serif;
+
+    --transition-speed: 0.3s;
+}
+
+/* Light Mode Override (Optional, if toggle is used) */
+body.light-mode {
+    --surface-page: #F5F5F5;
+    --surface-card: #FFFFFF;
+    --text-heading: #151515;
+    --text-body: #4A4A4A;
+    --primary-cyan: #0FBCA8;
+    --icon-color: #151515;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--surface-page);
+    color: var(--text-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo-circle {
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--primary-cyan);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-cyan);
+    position: relative;
+}
+
+.logo-circle span:first-child {
+    transform: translateX(-1px);
+}
+
+.logo-circle span:last-child {
+    transform: translateX(1px);
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+body.light-mode .theme-toggle .icon-moon {
+    display: none;
+}
+
+body.light-mode .theme-toggle .icon-sun {
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    /* Hidden on desktop if we had a desktop menu, but design shows hamburger on mobile. Wait, desktop screenshot shows no hamburger, just bottom nav. */
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-heading);
+    border-radius: 2px;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--surface-page);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5%;
+    transform: translateX(100%);
+    transition: transform var(--transition-speed) ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.menu-close {
+    background: none;
+    border: none;
+    color: var(--text-heading);
+    cursor: pointer;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 2rem;
+}
+
+.mobile-nav-links a {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-heading);
+}
+
+.mobile-nav-links a:hover {
+    color: var(--primary-cyan);
+}
+
+/* Hero Section */
+.hero {
+    /* flex: 1; Removed to allow scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 1rem 2rem;
+    /* Adjusted padding */
+    min-height: calc(100vh - 80px);
+    /* Ensure nav is visible at bottom */
+}
+
+.container {
+    max-width: 1100px;
+    /* Increased width for desktop layout */
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.profile-image-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    background-color: var(--text-heading);
+    /* Fallback */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--surface-page);
+    /* Optional border */
+    box-shadow: 0 0 0 2px var(--text-heading);
+    /* Outer ring like in design? Actually design has just image */
+    box-shadow: none;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.role-label {
+    color: var(--primary-cyan);
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.headline {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.sub-headline {
+    font-size: 1.125rem;
+    color: var(--text-body);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-cyan);
+    color: var(--text-on-primary);
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-body);
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.social-links a:hover {
+    opacity: 1;
+    color: var(--primary-cyan);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 0;
+    background-color: var(--surface-page);
+}
+
+.section-title {
+    color: var(--primary-cyan);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: var(--text-body);
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: var(--primary-cyan);
+    color: var(--text-on-primary);
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.download-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.about-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-body);
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
+}
+
+.tag:hover {
+    border-color: var(--primary-cyan);
+}
+
+.tag.category {
+    background-color: #107C6F;
+    /* Darker green/cyan from screenshot */
+    background-color: #0E5E54;
+    /* Even darker? Let's try to match the image */
+    background-color: #128073;
+    /* The screenshot shows a distinct green color for the category tag */
+    background-color: #00897B;
+    /* Material Teal 600 approx */
+    background-color: #0F766E;
+    /* Tailwind teal-700 */
+    background-color: #11998A;
+    /* Custom guess */
+    border-color: transparent;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+/* Sticky Navigation */
+.sticky-nav {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--surface-page);
+    /* Ensure content doesn't show through */
+    transition: background-color var(--transition-speed);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle separator */
+}
+
+.nav-pill {
+    display: flex;
+    gap: 2rem;
+    padding: 0.75rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
+}
+
+.nav-pill a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-body);
+    opacity: 0.7;
+}
+
+.nav-pill a:hover,
+.nav-pill a.active {
+    opacity: 1;
+    color: var(--primary-cyan);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .sticky-nav {
+        display: none;
+        /* Hide sticky nav on mobile as per design which shows hamburger */
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 6rem 1rem;
+    }
+
+    .headline {
+        font-size: 2.25rem;
+    }
+
+    .sub-headline {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* About Section Mobile */
+    .mobile-only {
+        display: block;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .skill-group {
+        justify-content: center;
+    }
+}
+
+/* Case Studies Section */
+.case-studies-section {
+    padding: 4rem 0 6rem;
+    background-color: var(--surface-page);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+.section-tag {
+    color: var(--primary-cyan);
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.desktop-tag {
+    display: none;
+    color: var(--primary-cyan);
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-heading);
+}
+
+.section-subheading {
+    color: var(--text-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.project-card {
+    background-color: var(--surface-card);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background-color: #2a2a2a;
+    overflow: hidden;
+    padding: 1.5rem;
+    /* Inner padding for the 'image' look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .card-image img {
+    transform: scale(1.02);
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-content h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-heading);
+}
+
+.view-case-study {
+    color: var(--primary-cyan);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.view-case-study:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.view-more-container {
+    text-align: center;
+}
+
+.view-more-btn {
+    display: inline-block;
+    background-color: var(--primary-cyan);
+    color: var(--text-on-primary);
+    padding: 0.875rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.view-more-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles for Case Studies */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .section-tag {
+        display: block;
+        /* Shown on mobile as per design */
+    }
+
+    .desktop-tag {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .section-tag {
+        display: none;
+        /* Hide the mobile tag on desktop */
+    }
+
+    .desktop-tag {
+        display: block;
+        /* Show desktop tag */
+    }
+}
+
+/* Journey Section */
+.journey-section {
+    padding: 4rem 0 6rem;
+    background-color: var(--surface-page);
+}
+
+.experience-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experience-card {
+    background-color: var(--surface-card);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.exp-header {
+    margin-bottom: 1.5rem;
+}
+
+.role-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.role-title h3 {
+    font-size: 1.25rem;
+    color: var(--text-heading);
+}
+
+.badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.badge.full-time {
+    background-color: #0E5E54;
+    /* Dark green background */
+    color: #11DCC7;
+    /* Cyan text */
+}
+
+.badge.freelance {
+    background-color: #0E5E54;
+    color: #11DCC7;
+}
+
+.company-info {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--text-body);
+    font-size: 0.875rem;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.exp-details ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: var(--text-body);
+}
+
+.exp-details li {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #000000;
+    /* Black footer background */
+    padding: 4rem 0;
+    margin-top: auto;
+    border-top: 1px solid var(--primary-cyan);
+    /* Cyan top border as seen in design */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.footer-logo {
+    margin-bottom: 2rem;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--text-heading);
+    font-style: normal;
+    /* Dancing Script is already cursive-like */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-body);
+    font-size: 1rem;
+}
+
+.contact-item a:hover {
+    color: var(--primary-cyan);
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.availability-badge {
+    background-color: #1A1A1A;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-heading);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22C55E;
+    /* Green dot */
+    border-radius: 50%;
+}
+
+.social-section h4 {
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-cyan);
+    color: #000000;
+    /* Icon color inside circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.footer-social-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* Responsive Styles for Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .social-section h4 {
+        text-align: left;
+    }
+
+    .company-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
