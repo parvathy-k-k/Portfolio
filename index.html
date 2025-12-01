@@ -79,6 +79,74 @@
             transform: translateY(0);
         }
 
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Typing Animation */
+        .typing::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+            color: #00E5FF;
+            margin-left: 4px;
+        }
+
+        .typing-done::after {
+            content: '';
+            animation: none;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Icon Micro-interactions */
+        .icon-enter {
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+            transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .icon-enter.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Primary Button Animation */
+        .btn-primary-animate {
+            background-image: linear-gradient(to right, #00E5FF 0%, #14B8A6 51%, #00E5FF 100%);
+            background-size: 200% auto;
+            transition: 0.5s;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+        }
+
+        .btn-primary-animate:hover {
+            background-position: right center;
+            color: #0f172a;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .btn-primary-animate:active {
+            transform: scale(0.95);
+        }
+
         /* Desktop Accordion Styles */
         @media (min-width: 768px) {
             .accordion-card {
@@ -125,7 +193,7 @@
 <body class="antialiased overflow-x-hidden">
 
     <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 bg-transparent">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#" id="nav-brand"
                 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
@@ -152,8 +220,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+    <!-- Hero Section (Sticky) -->
+    <section id="hero"
+        class="sticky top-0 flex items-center justify-center pt-24 md:pt-32 md:h-screen overflow-hidden z-0">
         <!-- Background Gradients -->
         <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/10 rounded-full blur-[120px] -z-10 animate-pulse">
         </div>
@@ -165,26 +234,22 @@
                     class="inline-block px-4 py-2 rounded-full bg-surface border border-slate-700 text-primary text-sm font-medium mb-6">
                     <!-- JS -->
                 </div>
-                <h1 id="hero-title" class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                <h1 id="hero-title" class="text-4xl md:text-7xl font-bold leading-tight mb-6">
                     <!-- JS -->
                 </h1>
-                <p id="hero-desc" class="text-slate-400 text-lg mb-8 max-w-lg leading-relaxed">
+                <p id="hero-desc" class="text-slate-400 text-md mb-8 max-w-lg leading-relaxed">
                     <!-- JS -->
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" id="hero-btn-primary"
-                        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 bg-gradient-to-r from-primary to-secondary text-slate-900 shadow-lg hover:shadow-primary/50">
-                        <!-- JS -->
-                    </a>
-                    <button id="hero-btn-secondary"
+                <div class="flex flex-wrap gap-2 md:gap-4">
+                    <a id="hero-btn-secondary" href="./assets/CV -Parvathy K Krishnan.pdf" download
                         class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 active:scale-95 bg-surface text-white border border-slate-700 hover:border-primary hover:text-primary">
                         <!-- JS -->
-                    </button>
+                    </a>
                 </div>
             </div>
 
-            <div class="reveal relative delay-200">
-                <div class="relative aspect-square max-w-md mx-auto">
+            <div class="reveal relative delay-200 pb-20">
+                <div id="hero-image-container" class="relative aspect-square max-w-md mx-auto">
                     <!-- Abstract circular frame -->
                     <div
                         class="absolute inset-0 border-2 border-slate-800 rounded-full animate-[spin_10s_linear_infinite]">
@@ -195,128 +260,133 @@
 
                     <img id="hero-image" src="" alt="Portrait" class="rounded-full w-full h-full object-cover p-8" />
 
-                    <!-- Floating Badge -->
-                    <div class="absolute top-10 right-0 bg-surface/90 backdrop-blur border border-slate-700 p-4 rounded-xl shadow-xl animate-bounce"
-                        style="animation-duration: 3s;">
-                        <span id="hero-stat-val" class="text-2xl font-bold text-accent"></span>
-                        <span id="hero-stat-label" class="block text-xs text-slate-400"></span>
+                    <!-- Floating Badges Container -->
+                    <div id="hero-badges">
+                        <!-- JS Populated -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-surface/30">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto reveal">
-                <h2 id="about-title" class="text-3xl font-bold mb-8 flex items-center gap-4">
-                    <!-- JS -->
-                </h2>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div id="about-text" class="space-y-6 text-slate-300 leading-relaxed">
-                        <!-- JS populated paragraphs -->
-                    </div>
+    <!-- Main Content Wrapper (Slides over Hero) -->
+    <div id="main-content" class="relative z-10 bg-background shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
 
-                    <!-- Icon Grid -->
-                    <div class="bg-surface/50 rounded-3xl p-8 border border-slate-800 flex items-center justify-center">
-                        <div id="about-grid" class="grid grid-cols-2 gap-8 text-center">
-                            <!-- JS populated icons -->
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-surface/30">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto reveal">
+                    <h2 id="about-title" class="text-3xl font-bold mb-8 flex items-center gap-4">
+                        <!-- JS -->
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div id="about-text" class="space-y-6 text-slate-300 leading-relaxed">
+                            <!-- JS populated paragraphs -->
+                        </div>
+
+                        <!-- Icon Grid -->
+                        <div
+                            class="bg-surface/50 rounded-3xl p-8 border border-slate-800 flex items-center justify-center">
+                            <div id="about-grid" class="grid grid-cols-2 gap-8 text-center">
+                                <!-- JS populated icons -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (Scroll-Linked Animation) -->
+        <section id="projects" class="relative bg-background">
+            <div id="projects-sticky"
+                class="w-full md:h-screen md:sticky md:top-0 md:overflow-hidden flex flex-col bg-background z-20">
+
+                <div class="container mx-auto px-6 py-8 md:pt-16 md:pb-8 flex-none reveal z-30">
+                    <h2 id="projects-title" class="text-4xl md:text-6xl font-bold mb-4"></h2>
+                    <p class="text-slate-400 max-w-xl text-lg">
+                        <span id="projects-desc"></span>
+                        <span id="projects-hint-desktop" class="hidden md:inline"></span>
+                        <span id="projects-hint-mobile" class="md:hidden"></span>
+                    </p>
+                </div>
+
+                <div id="projects-track"
+                    class="flex-1 flex gap-6 px-6 md:px-[10vw] items-center overflow-x-auto md:overflow-visible w-full md:w-max snap-x snap-mandatory md:snap-none scrollbar-hide pb-12 md:pb-0">
+                    <!-- JS populated Cards -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience / Journey Section -->
+        <section id="journey" class="py-24 bg-surface/20">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-16 reveal">
+                    <span id="journey-badge"
+                        class="flex flex-col text-primary text-sm font-semibold tracking-wider uppercase"></span>
+                    <h2 id="journey-title" class="text-4xl font-bold mt-2 inline-block"></h2>
+                    <p class="text-slate-400 mt-2 text-sm flex items-center justify-center gap-2">
+                        <i data-lucide="mouse-pointer-click" class="w-4 h-4"></i>
+                        <span class="md:hidden">Tap card to expand</span>
+                        <span class="hidden md:inline">Hover over cards to see details</span>
+                    </p>
+                </div>
+
+                <!-- Accordion Container -->
+                <div id="journey-list" class="accordion-container flex flex-col md:flex-row gap-4 w-full h-auto reveal">
+                    <!-- JS populated Accordion -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 md:py-48 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="reveal rounded-3xl p-8 md:p-16 text-center max-w-4xl mx-auto">
+                    <h2 id="contact-title" class="text-4xl md:text-5xl font-bold mb-6"></h2>
+                    <p id="contact-desc" class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto"></p>
+
+                    <div class="flex flex-col md:flex-row justify-center gap-8 mb-12">
+                        <a id="contact-email" href="#"
+                            class="flex items-center gap-3 p-4 bg-background rounded-xl border border-slate-800 hover:border-primary hover:text-primary transition-colors group">
+                            <i data-lucide="mail"
+                                class="w-6 h-6 text-slate-400 group-hover:text-primary transition-colors"></i>
+                            <span class="text-slate-300 group-hover:text-white transition-colors"></span>
+                        </a>
+                        <div class="flex items-center gap-3 p-4 bg-background rounded-xl border border-slate-800">
+                            <i data-lucide="phone" class="w-6 h-6 text-slate-400"></i>
+                            <span id="contact-phone" class="text-slate-300"></span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-background rounded-xl border border-slate-800">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-slate-400"></i>
+                            <span id="contact-location" class="text-slate-300"></span>
                         </div>
                     </div>
 
+                    <div id="contact-socials" class="flex justify-center gap-4">
+                        <!-- JS populated -->
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section (Scroll-Linked Animation) -->
-    <section id="projects" class="relative bg-background">
-        <div id="projects-sticky"
-            class="w-full md:h-screen md:sticky md:top-0 md:overflow-hidden flex flex-col bg-background z-20">
-
-            <div class="container mx-auto px-6 py-8 md:pt-16 md:pb-8 flex-none reveal z-30">
-                <h2 id="projects-title" class="text-4xl md:text-6xl font-bold mb-4"></h2>
-                <p class="text-slate-400 max-w-xl text-lg">
-                    <span id="projects-desc"></span>
-                    <span id="projects-hint-desktop" class="hidden md:inline"></span>
-                    <span id="projects-hint-mobile" class="md:hidden"></span>
+        <!-- Footer -->
+        <footer class="py-8 bg-black border-t border-slate-800 text-center">
+            <div class="container mx-auto px-6">
+                <div class="mb-4">
+                    <span id="footer-brand" class="text-2xl font-bold font-script text-white"></span>
+                </div>
+                <p class="text-slate-500 text-sm">
+                    © <span id="year"></span> <span id="footer-copy"></span>. All rights reserved.
                 </p>
             </div>
+        </footer>
 
-            <div id="projects-track"
-                class="flex-1 flex gap-6 px-6 md:px-[10vw] items-center overflow-x-auto md:overflow-visible w-full md:w-max snap-x snap-mandatory md:snap-none scrollbar-hide pb-12 md:pb-0">
-                <!-- JS populated Cards -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience / Journey Section -->
-    <section id="journey" class="py-24 bg-surface/20">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-16 reveal">
-                <span id="journey-badge" class="text-primary text-sm font-semibold tracking-wider uppercase"></span>
-                <h2 id="journey-title" class="text-4xl font-bold mt-2"></h2>
-                <p class="text-slate-400 mt-2 text-sm flex items-center justify-center gap-2">
-                    <i data-lucide="mouse-pointer-click" class="w-4 h-4"></i>
-                    <span class="md:hidden">Tap card to expand</span>
-                    <span class="hidden md:inline">Hover over cards to see details</span>
-                </p>
-            </div>
-
-            <!-- Accordion Container -->
-            <div id="journey-list" class="accordion-container flex flex-col md:flex-row gap-4 w-full h-auto reveal">
-                <!-- JS populated Accordion -->
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="reveal rounded-3xl p-8 md:p-16 text-center max-w-4xl mx-auto">
-                <h2 id="contact-title" class="text-4xl md:text-5xl font-bold mb-6"></h2>
-                <p id="contact-desc" class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto"></p>
-
-                <div class="flex flex-col md:flex-row justify-center gap-8 mb-12">
-                    <a id="contact-email" href="#"
-                        class="flex items-center gap-3 p-4 bg-background rounded-xl border border-slate-800 hover:border-primary hover:text-primary transition-colors group">
-                        <i data-lucide="mail"
-                            class="w-6 h-6 text-slate-400 group-hover:text-primary transition-colors"></i>
-                        <span class="text-slate-300 group-hover:text-white transition-colors"></span>
-                    </a>
-                    <div class="flex items-center gap-3 p-4 bg-background rounded-xl border border-slate-800">
-                        <i data-lucide="phone" class="w-6 h-6 text-slate-400"></i>
-                        <span id="contact-phone" class="text-slate-300"></span>
-                    </div>
-                    <div class="flex items-center gap-3 p-4 bg-background rounded-xl border border-slate-800">
-                        <i data-lucide="map-pin" class="w-6 h-6 text-slate-400"></i>
-                        <span id="contact-location" class="text-slate-300"></span>
-                    </div>
-                </div>
-
-                <div id="contact-socials" class="flex justify-center gap-4">
-                    <!-- JS populated -->
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 bg-black border-t border-slate-800 text-center">
-        <div class="container mx-auto px-6">
-            <div class="mb-4">
-                <span id="footer-brand" class="text-2xl font-bold font-script text-white"></span>
-            </div>
-            <p class="text-slate-500 text-sm">
-                © <span id="year"></span> <span id="footer-copy"></span>. All rights reserved.
-            </p>
-        </div>
-    </footer>
+    </div> <!-- End Main Content Wrapper -->
 
     <!-- Main Logic Script -->
     <script type="module">
@@ -348,11 +418,11 @@
 
             const navDesktop = document.getElementById('nav-desktop');
             const navMobile = document.getElementById('nav-mobile-links');
-            const hireBtn = `<a href="#contact" class="px-5 py-2 rounded-full bg-surface border border-slate-700 hover:border-primary text-white text-sm font-medium transition-colors">Get in Touch</a>`;
+            const hireBtn = `<a href="#contact" class="px-5 py-2 rounded-full bg-surface border border-slate-700 hover:border-primary text-white text-md font-medium transition-colors">Get in Touch</a>`;
 
             let navHtml = '';
             data.navbar.forEach(link => {
-                navHtml += `<a href="${link.href}" class="nav-link text-slate-300 hover:text-primary transition-colors text-sm font-medium">${link.label}</a>`;
+                navHtml += `<a href="${link.href}" class="nav-link text-slate-300 hover:text-primary transition-colors text-md font-medium">${link.label}</a>`;
             });
 
             navDesktop.innerHTML = navHtml + hireBtn;
@@ -369,33 +439,41 @@
             document.getElementById('hero-badge').textContent = data.hero.badge;
             document.getElementById('hero-title').innerHTML = `${data.hero.titlePrefix} <br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">${data.hero.titleHighlight}</span> ${data.hero.titleSuffix}`;
             document.getElementById('hero-desc').textContent = data.hero.description;
-            document.getElementById('hero-btn-primary').innerHTML = `${data.hero.buttons.primary} <i data-lucide="arrow-right" class="w-4 h-4"></i>`;
+            // document.getElementById('hero-btn-primary').innerHTML = `${data.hero.buttons.primary} <i data-lucide="arrow-right" class="w-4 h-4"></i>`;
             document.getElementById('hero-btn-secondary').innerHTML = `${data.hero.buttons.secondary} <i data-lucide="download" class="w-4 h-4"></i>`;
-
-            document.getElementById('hero-btn-secondary').addEventListener('click', () => {
-                const link = document.createElement('a');
-                link.href = './assets/resume.pdf';
-                link.download = 'resume.pdf';
-                link.click();
-            });
             document.getElementById('hero-image').src = data.hero.image;
-            document.getElementById('hero-stat-val').textContent = data.hero.stats.value;
-            document.getElementById('hero-stat-label').textContent = data.hero.stats.label;
+
+            // Render Floating Badges
+            if (data.hero.floatingBadges) {
+                document.getElementById('hero-badges').innerHTML = data.hero.floatingBadges.map(badge => `
+                <div class="absolute ${badge.position} bg-surface/90 backdrop-blur border border-slate-700 p-3 md:p-4 rounded-xl shadow-xl flex items-center gap-3 ${badge.animation}" style="animation-duration: 3s;">
+                    ${badge.icon ? `<div class="p-2 bg-primary/10 rounded-full text-primary"><i data-lucide="${badge.icon}" class="w-5 h-5"></i></div>` : ''}
+                    <div>
+                        <span class="block text-sm md:text-xl font-bold text-white leading-tight">${badge.value}</span>
+                        <span class="block text-xs text-slate-400">${badge.label}</span>
+                    </div>
+                </div>
+            `).join('');
+            }
 
             // --- About ---
-            document.getElementById('about-title').innerHTML = `<span class="w-12 h-[2px] bg-primary"></span>${data.about.title}`;
+            // Typing Effect Setup
+            document.getElementById('about-title').innerHTML = `<span class="w-12 h-[2px] bg-primary inline-block align-middle mr-4"></span><span data-type-text="${data.about.title}"></span>`;
+
             document.getElementById('about-text').innerHTML = data.about.description.map(p => `<p>${p}</p>`).join('');
-            document.getElementById('about-grid').innerHTML = data.about.iconGrid.map(item => `
-            <div class="flex flex-col items-center">
-                <div class="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center mb-4 border border-slate-700">
-                        <i data-lucide="${item.icon}" class="w-8 h-8 ${item.color}"></i>
+
+            // Icon Grid with Pop-in Animation
+            document.getElementById('about-grid').innerHTML = data.about.iconGrid.map((item, index) => `
+            <div class="flex flex-col items-center icon-enter" style="transition-delay: ${index * 150}ms">
+                <div class="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center mb-4 border border-slate-700 group hover:scale-110 hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer">
+                        <i data-lucide="${item.icon}" class="w-8 h-8 ${item.color} group-hover:scale-110 transition-transform"></i>
                 </div>
                 <span class="text-slate-300 font-medium">${item.label}</span>
             </div>
         `).join('');
 
             // --- Projects ---
-            document.getElementById('projects-title').textContent = data.projects.title;
+            document.getElementById('projects-title').innerHTML = `<span data-type-text="${data.projects.title}"></span>`;
             document.getElementById('projects-desc').textContent = data.projects.subtitle;
             document.getElementById('projects-hint-desktop').textContent = data.projects.scrollHint.desktop;
             document.getElementById('projects-hint-mobile').textContent = data.projects.scrollHint.mobile;
@@ -427,7 +505,7 @@
               </div>
               <h3 class="text-2xl font-bold text-white mb-2">${data.projects.archive.title}</h3>
               <p class="text-slate-400 mb-8 max-w-xs">${data.projects.archive.description}</p>
-              <span class="px-8 py-3 rounded-full bg-primary text-slate-900 font-bold hover:bg-accent transition-colors">
+              <span class="px-8 py-3 rounded-full btn-primary-animate text-slate-900 font-bold">
                   ${data.projects.archive.button}
               </span>
           </div>
@@ -436,7 +514,7 @@
 
             // --- Journey ---
             document.getElementById('journey-badge').textContent = data.journey.badge;
-            document.getElementById('journey-title').textContent = data.journey.title;
+            document.getElementById('journey-title').innerHTML = `<span data-type-text="${data.journey.title}"></span>`;
             document.getElementById('journey-list').innerHTML = data.journey.items.map(job => `
              <div tabindex="0" class="accordion-card group relative bg-surface border border-slate-700 hover:border-${job.color} focus:border-${job.color} rounded-3xl overflow-hidden cursor-pointer outline-none">
                     <div class="absolute inset-0 bg-gradient-to-b from-${job.color}/5 to-transparent opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500"></div>
@@ -467,7 +545,7 @@
         `).join('');
 
             // --- Contact ---
-            document.getElementById('contact-title').textContent = data.contact.title;
+            document.getElementById('contact-title').innerHTML = `<span data-type-text="${data.contact.title}"></span>`;
             document.getElementById('contact-desc').textContent = data.contact.description;
 
             const emailLink = document.getElementById('contact-email');
@@ -492,11 +570,9 @@
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    navbar.classList.add('bg-background/90', 'backdrop-blur-md', 'border-b', 'border-slate-800', 'py-4');
-                    navbar.classList.remove('bg-transparent', 'py-6');
+                    navbar.classList.add('bg-background/90');
                 } else {
-                    navbar.classList.remove('bg-background/90', 'backdrop-blur-md', 'border-b', 'border-slate-800', 'py-4');
-                    navbar.classList.add('bg-transparent', 'py-6');
+                    navbar.classList.remove('bg-background/90');
                 }
             });
 
@@ -549,23 +625,60 @@
         }
 
         function setupAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: "0px 0px -50px 0px"
-            };
-
-            const observer = new IntersectionObserver((entries) => {
+            // Observer for standard fade-up
+            const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        if (entry.target.classList.contains('reveal')) {
-                            entry.target.classList.add('active');
-                        }
-                        observer.unobserve(entry.target);
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+            // Observer for Typing Effect
+            const typingObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const text = el.getAttribute('data-type-text');
+
+                        if (text && !el.classList.contains('typing-done')) {
+                            el.classList.add('typing');
+                            let i = 0;
+                            el.textContent = '';
+
+                            function type() {
+                                if (i < text.length) {
+                                    el.textContent += text.charAt(i);
+                                    i++;
+                                    setTimeout(type, 80); // Typing speed
+                                } else {
+                                    el.classList.remove('typing');
+                                    el.classList.add('typing-done');
+                                }
+                            }
+                            type();
+                        }
+                        typingObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 1.0 });
+
+            document.querySelectorAll('[data-type-text]').forEach(el => typingObserver.observe(el));
+
+            // Observer for Icon Pop-in
+            const iconObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        iconObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.icon-enter').forEach(el => iconObserver.observe(el));
         }
 
         // Initialize Application

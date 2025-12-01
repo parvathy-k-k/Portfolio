@@ -23,7 +23,7 @@
     "navbar": [
         {
             "label": "Home",
-            "href": "#hero"
+            "href": "#navbar"
         },
         {
             "label": "About",
@@ -48,10 +48,22 @@
             "primary": "View Projects",
             "secondary": "Download Resume"
         },
-        "stats": {
-            "value": "2+",
-            "label": "Years Experience"
-        },
+        "floatingBadges": [
+            {
+                "value": "2+",
+                "label": "Years Experience",
+                "icon": null,
+                "position": "top-8 -right-4 md:-right-8",
+                "animation": "animate-bounce"
+            },
+            {
+                "value": "Figma",
+                "label": "Expert",
+                "icon": "pen-tool",
+                "position": "bottom-12 -left-4 md:-left-12",
+                "animation": "animate-float"
+            }
+        ],
         "image": "./images/avatar2.jpeg"
     },
     "about": {
