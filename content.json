@@ -1,0 +1,185 @@
+{
+    "general": {
+        "name": "Parvathy",
+        "role": "UI/UX Designer",
+        "email": "parvathyk.official@gmail.com",
+        "phone": "+49 15510061542",
+        "location": "Munich, Germany",
+        "socials": [
+            {
+                "platform": "linkedin",
+                "url": "https://www.linkedin.com/in/parvathy-k-krishnan"
+            },
+            {
+                "platform": "dribbble",
+                "url": "https://dribbble.com/Parvathykk97"
+            },
+            {
+                "platform": "instagram",
+                "url": "https://www.instagram.com/art_c_snaps/"
+            }
+        ]
+    },
+    "navbar": [
+        {
+            "label": "Home",
+            "href": "#hero"
+        },
+        {
+            "label": "About",
+            "href": "#about"
+        },
+        {
+            "label": "Case Studies",
+            "href": "#projects"
+        },
+        {
+            "label": "Experience",
+            "href": "#journey"
+        }
+    ],
+    "hero": {
+        "badge": "UI/UX Designer",
+        "titlePrefix": "Hey, I'm Parvathy",
+        "titleHighlight": "Designing",
+        "titleSuffix": "intuitive solutions.",
+        "description": "I turn messy tech into \"ah, that's easy\" designs. I get excited about turning messy problems into clean, intuitive solutions.",
+        "buttons": {
+            "primary": "View Projects",
+            "secondary": "Download Resume"
+        },
+        "stats": {
+            "value": "2+",
+            "label": "Years Experience"
+        },
+        "image": "./images/avatar2.jpeg"
+    },
+    "about": {
+        "title": "About Me",
+        "description": [
+            "2+ years of experience in the Design Field, specializing in creating interfaces that are both visually appealing and highly functional.",
+            "Passionate about crafting seamless, user-centered digital experiences that balance aesthetics with usability, making every interaction feel natural.",
+            "Dedicated to problem-solving and attention to detail, with a focus on enhancing overall user experience and bringing ideas to life through thoughtful design."
+        ],
+        "iconGrid": [
+            {
+                "label": "UI Design",
+                "icon": "pen-tool",
+                "color": "text-primary"
+            },
+            {
+                "label": "Wireframing",
+                "icon": "frame",
+                "color": "text-secondary"
+            },
+            {
+                "label": "3D Modeling",
+                "icon": "box",
+                "color": "text-accent"
+            },
+            {
+                "label": "Prototyping",
+                "icon": "monitor",
+                "color": "text-white"
+            }
+        ]
+    },
+    "projects": {
+        "title": "Case Studies",
+        "subtitle": "A selection of recent case studies showcasing my problem-solving process.",
+        "scrollHint": {
+            "desktop": "Scroll down to explore.",
+            "mobile": "Swipe to explore."
+        },
+        "items": [
+            {
+                "id": 1,
+                "title": "Traceme",
+                "category": "Traceability App",
+                "categoryColor": "white",
+                "description": "A comprehensive mobile solution designed to bring transparency to the supply chain, allowing users to trace product origins instantly.",
+                "image": "./images/project1.png",
+                "link": "https://dribbble.com/shots/26102511-Case-Study-UI-Mockups-for-Organic-Product-Traceability"
+            },
+            {
+                "id": 2,
+                "title": "Interios",
+                "category": "Furniture App",
+                "categoryColor": "white",
+                "description": "Interios is an intuitive furniture shopping app aimed at making it easy for users to browse, compare, and purchase furniture for their home.",
+                "image": "./images/project2.png",
+                "link": "https://dribbble.com/shots/26310429-A-Smart-Way-to-Buy-Furniture-Online"
+            },
+            {
+                "id": 3,
+                "title": "RMS",
+                "category": "Refugee Management Tool",
+                "categoryColor": "white",
+                "description": "Digital platform made to help manage day-to-day work in refugee camps.",
+                "image": "./images/project4.png",
+                "link": "https://dribbble.com/shots/26319064-Case-study-Refugee-management-tool"
+            },
+            {
+                "id": 4,
+                "title": "Expensify",
+                "category": "Expense Manager",
+                "categoryColor": "white",
+                "description": "A comprehensive mobile solution designed to simplify expense management and budgeting.",
+                "image": "./images/project3.png",
+                "link": "https://www.behance.net/gallery/148474321/Expense-manager-Mobile-UI%22"
+            }
+        ],
+        "archive": {
+            "title": "More Projects",
+            "description": "Explore my designs and experiments.",
+            "button": "View Projects"
+        }
+    },
+    "journey": {
+        "title": "Professional Journey",
+        "badge": "My Experience",
+        "items": [
+            {
+                "year": "2023 - 2025",
+                "role": "Junior UI/UX Designer",
+                "company": "CIED Technologies Pvt Ltd India",
+                "color": "primary",
+                "icon": "briefcase",
+                "details": [
+                    "Designed user-friendly web and mobile interfaces focused on usability.",
+                    "Created high-fidelity mockups in Figma and translated ideas into designs.",
+                    "Collaborated with developers for seamless implementation.",
+                    "Created high quality illustrations and wireframes for user interfaces."
+                ]
+            },
+            {
+                "year": "2022 - 2023",
+                "role": "Interior 3D Designer",
+                "company": "Livspace, India",
+                "color": "secondary",
+                "icon": "box",
+                "details": [
+                    "Specialized in 3D visualization for residential and commercial projects.",
+                    "Worked closely with architects using AutoCAD and SketchUp.",
+                    "Created high quality 3D models and renderings for interior design projects."
+                ]
+            },
+            {
+                "year": "2020 - 2022",
+                "role": "3D Designer",
+                "company": "Freelance",
+                "color": "accent",
+                "icon": "layers",
+                "details": [
+                    "Delivered high-quality 3D assets and product renderings.",
+                    "Managed end-to-end project timelines from concept to delivery.",
+                    "Worked closely with clients to understand their requirements and deliver high-quality results."
+                ]
+            }
+        ]
+    },
+    "contact": {
+        "title": "Let's work together",
+        "description": "Available now for new projects. Let's create something amazing together."
+    }
+}
