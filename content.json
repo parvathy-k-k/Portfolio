@@ -23,7 +23,7 @@
     "navbar": [
         {
             "label": "Home",
-            "href": "#navbar"
+            "href": "#"
         },
         {
             "label": "About",
@@ -45,7 +45,6 @@
         "titleSuffix": "intuitive solutions.",
         "description": "I turn messy tech into \"ah, that's easy\" designs. I get excited about turning messy problems into clean, intuitive solutions.",
         "buttons": {
-            "primary": "View Projects",
             "secondary": "Download Resume"
         },
         "floatingBadges": [
